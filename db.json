@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "e-mail": "ivan@example.com"
+  },
+  {
+    "id": 2,
+    "e-mail": "maria@example.com"
+  },
+  {
+    "id": 4,
+    "e-mail": "olga@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Андрій",
+    "e-mail": "andriy@example.com"
+  },
+  {
+    "id": 6,
+    "e-mail": "natalia@example.com",
+    "name": "НАТА"
+  },
+  {
+    "id": 8,
+    "e-mail": "katerina@example.com"
+  },
+  {
+    "id": 9,
+    "e-mail": "mikhailo@example.com"
+  },
+  {
+    "id": 10,
+    "name": "Юлія",
+    "e-mail": "yulia@example.com"
+  },
+  {
+    "name": "Ihor",
+    "email": "ihor@example.com",
+    "id": 11
+  }
+]
