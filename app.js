@@ -42,13 +42,18 @@ app.post('/users',async (req, res)=>{
 })
 
 app.get('/users/:id',async (req,res)=>{
-    const {id}=req.params
-    const users=await fsService.reader()
-    const user=users.find((user)=>user.id===Number(id))
-    if (!user) {
-        throw new Error('User not found');
+    try {
+        const {id}=req.params
+        const users=await fsService.reader()
+        const user=users.find((user)=>user.id===Number(id))
+        if (!user) {
+            throw new Error('User not found');
+        }
+        res.json(user)
+    }catch (e){
+        res.status(404).json(e.message);
+
     }
-    res.json(user)
 })
 
 app.delete('/users/:id',async (req,res)=>{
@@ -74,6 +79,14 @@ app.put('/users/:id', async (req, res) => {
     try {
         const {id} = req.params;
         const {name, email} = req.body;
+
+        if (!name||name.length<3){
+            throw new Error('Wrong name');
+        }
+
+        if (!email||!email.includes('@')){
+            throw new Error('Wrong e-mail');
+        }
 
         const users = await fsService.reader();
         const user = users.find((user) => user.id === Number(id));
